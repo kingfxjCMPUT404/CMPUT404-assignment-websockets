@@ -59,11 +59,8 @@
 
                     var grd = createLinearGradient(0, 0, 175, 0);      
                     grd.addColorStop(1, "red");
-                    // fillStyle = entity["colour"];
                     fillStyle = "pink";
                     strokeStyle = grd;
-                    shadowBlur = 30;
-                    shadowColor = "grey";
                     linecap = "round"
 
                     arc(x, y, (entity["radius"])?entity["radius"]:60, 0, 2.0 * Math.PI, false);
@@ -84,9 +81,8 @@
 
             function clearFrame() {
                 with(context) {
-                moveTo(0,0);
-                fillStyle = "#000";
-                fillRect(0,0,W,H);
+                    moveTo(0,0);
+                    fillRect(0,0,W,H);
                 }
 
             }
@@ -246,9 +242,6 @@
             // Add the application specific mouse listeners!
             //XXX: TODO Make these prettier!
             mouse.mousedowners.push(function(x,y,clicked,e) {
-                // https://dev.to/akhil_001/generating-random-color-with-single-line-of-js-code-fhj, credit to Akhil Sai from May 12,2019
-                // const color = Math.floor(Math.random()*16777215).toString(16);
-                // let randomcolor = '#'+color;
                 addEntityWithoutName({'x':x,'y':y,'colour':'blue'});
             });
 
@@ -277,7 +270,7 @@
                 };
                 socket.onmessage = function(msg) {  
                     try {
-                        debug("WebSocket Recv:" + msg);
+                        debug("WebSocket Recv:" + msg.data);
                         //XXX: TODO What are you going to do here?
                         for (let i in JSON.parse(msg.data)) {
                             world[i] = JSON.parse(msg.data)[i]

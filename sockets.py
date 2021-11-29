@@ -90,7 +90,6 @@ myWorld.add_set_listener( set_listener )
 #  Reference: https://github.com/abramhindle/WebSocketsExamples/blob/master/chat.py
 @app.route('/')
 def hello():
-    # return flask.redirect("/static/index.html")
     return flask.redirect('/static/index.html')
 
 def read_ws(ws,client):
@@ -142,8 +141,7 @@ def flask_post_json():
 def update(entity):
     '''update the entities via this interface'''
     myWorld.set(entity, flask_post_json())
-    # return json.dumps(flask_post_json())
-    return json.dumps(myWorld.world())
+    return json.dumps(flask_post_json())
 
 @app.route("/world", methods=['POST','GET'])    
 def world():

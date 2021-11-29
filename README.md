@@ -64,6 +64,7 @@ Contributors
 Reference
 =======================
 * https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_canvas_tut_grad
+* https://www.github.com/kingfxj/CMPUT404-assignment-ajax by King Fu (Myself)
 
 Colaborator
 =======================
