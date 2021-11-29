@@ -59,3 +59,12 @@ Contributors
 * Mark Galloway
 * Abram Hindle
 * Cole Mackenzie
+* King Fu
+
+Reference
+=======================
+* https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_canvas_tut_grad
+
+Colaborator
+=======================
+* Belton He (CCID: jinzhou)
