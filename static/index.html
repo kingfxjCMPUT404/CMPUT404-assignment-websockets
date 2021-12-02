@@ -59,13 +59,16 @@
 
                     var grd = createLinearGradient(0, 0, 175, 0);      
                     grd.addColorStop(1, "red");
+                    // fillStyle = entity["colour"];
                     fillStyle = "pink";
                     strokeStyle = grd;
+                    // shadowBlur = 30;
+                    // shadowColor = "grey";
                     linecap = "round"
 
                     arc(x, y, (entity["radius"])?entity["radius"]:60, 0, 2.0 * Math.PI, false);
                     fill();
-                    stroke(); 
+                    stroke();
                 }
             }
 
@@ -82,6 +85,7 @@
             function clearFrame() {
                 with(context) {
                     moveTo(0,0);
+                    fillStyle = "#000";
                     fillRect(0,0,W,H);
                 }
 
@@ -134,7 +138,9 @@
                 world[entity] = data;
                 drawNextFrame(); // (but should we?)
                 //XXX: Send a XHTML Request that updates the entity you just modified!
-                socket.send(JSON.stringify( {entity: data} ))
+                var dictionary = new Object;
+                dictionary[entity] = data;
+                socket.send(JSON.stringify( dictionary ));
             }
 
             var counter = 0;
